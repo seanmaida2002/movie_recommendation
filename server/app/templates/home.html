@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <form method="GET" action="/app/movie_recommendations/">
+        <label for="movie">Movie:</label><br>
+        <input type="text" id="movie" name="movie"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if recommendations %}
+        <h3> Recommendations for "{{input_movie}}:"</h3>
+        <ul>
+            {% for movie in recommendations %}
+                <li>{{movie}}</li>
+            {% endfor %}
+        </ul>
+    {% elif input_movie %}
+        <p>Movie "{{input_movie}}" not found</p>
+    {% endif %}
+</body>
+</html>
