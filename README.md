@@ -4,6 +4,9 @@ A content-based movie recommendation system that suggests 10 films based on genr
 ## How It Works
 Enter a film name and FilmFinder returns 10 recommendations based on genre and collection similarity using a dataset of ~45,000 films.
 
+## Dataset
+[The Movies Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset/)
+
 ## Tech Stack
 **Backend**
 - Python / Django
