@@ -1,11 +1,27 @@
 import Layout from "../components/Layout";
-import TextField from '@mui/material/TextField';
+import { Button, TextField, Stack } from "@mui/material";
 
 export default function Home() {
   return (
     <Layout>
-      <br />
-      <TextField fullWidth label="Search Movie Recommendations" id="movieSearch" />
+      <Stack
+        direction="row"
+        spacing={2}
+        sx={{
+          mt: 3,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <TextField
+          label="Search Movie Recommendations"
+          id="movieSearch"
+          sx={{ width: "50%" }}
+        />
+        <Button variant="contained" id="searchButton">
+          Search
+        </Button>
+      </Stack>
     </Layout>
   );
 }
