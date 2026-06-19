@@ -1,10 +1,8 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework import status
 from django.shortcuts import render
 import pandas as pd
 from app.apps import AppConfig
-from sklearn.metrics.pairwise import cosine_similarity
 from rest_framework.decorators import api_view
 
 
@@ -25,4 +23,3 @@ def get_movie_recommendation(request):
     recommendations = results.head(10).index.tolist()
     
     return Response(recommendations)
-    # return render(request, 'home.html', {'recommendations': recommendations, 'input_movie': input_movie})
