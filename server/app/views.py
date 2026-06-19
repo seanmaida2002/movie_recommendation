@@ -16,7 +16,7 @@ def get_movie_recommendation(request):
     input_movie = request.GET.get('movie', '').lower()
     recommendations = []
     if not input_movie or input_movie not in movie_matrix.columns:
-        return Response([])
+        return Response(["Movie not found"])
     
     results = movie_matrix[input_movie].nlargest(11)
     results = results[results.index != input_movie]
