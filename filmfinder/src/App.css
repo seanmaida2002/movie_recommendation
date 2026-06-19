@@ -1,0 +1,15 @@
+.navbar{
+  background-color:cornflowerblue;
+  padding: 1rem 0;
+}
+
+.navbar .navbar-brand {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar .navbar-brand:hover {
+  color: #ffffffc8;
+}
