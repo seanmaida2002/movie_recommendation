@@ -21,7 +21,7 @@ Enter a film name and FilmFinder returns 10 recommendations based on genre and c
 | Version | Description |
 | :-------: | :-----------: |
 | v1      | HTML based frontend to test functionality. Django backend for API |
-| v2 (coming soon)      | React frontend |
+| v2.1      | React frontend with search functionality |
 
 ## Recommendation System
 The reccomendation model was built in Python using the following steps:
