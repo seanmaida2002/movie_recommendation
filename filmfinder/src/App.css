@@ -13,3 +13,11 @@
 .navbar .navbar-brand:hover {
   color: #ffffffc8;
 }
+
+.movieName{
+  text-decoration: none;
+}
+
+.movieName:hover {
+  text-decoration: underline;
+}

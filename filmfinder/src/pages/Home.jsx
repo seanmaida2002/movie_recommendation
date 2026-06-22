@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import { Button, TextField, Stack, Grid, styled, Paper } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
+import {Link} from 'react-router-dom'
 
 export default function Home() {
   const [recommendations, setRecommendations] = useState([]);
@@ -66,7 +67,7 @@ export default function Home() {
         <Grid container spacing={2} sx={{justifyContent: "center", alignItems: "center" }}>
           {recommendations.map((movie, index) => (
             <Grid size={5}>
-              <Item key={index}>{movie}</Item>
+              <Link className='movieName' to='/movie' state={{movieName: movie}} style={{color:'inherit'}}><Item key={index} sx={{color: "black"}}>{movie}</Item></Link>
             </Grid>
           ))}
         </Grid>
