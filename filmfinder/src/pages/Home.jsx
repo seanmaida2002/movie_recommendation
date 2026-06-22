@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import { Button, TextField, Stack } from "@mui/material";
+import { Button, TextField, Stack, Grid, styled, Paper } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
 
@@ -14,7 +14,7 @@ export default function Home() {
       const response = await axios.get(
         "http://localhost:8000/app/movie_recommendations",
         {
-          params: {movie: movieSearch.trim()},
+          params: { movie: movieSearch.trim() },
         },
       );
 
@@ -23,6 +23,17 @@ export default function Home() {
       console.log(e);
     }
   };
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: (theme.vars ?? theme).palette.text.secondary,
+    ...theme.applyStyles("dark", {
+      backgroundColor: "#1A2027",
+    }),
+  }));
 
   return (
     <Layout>
@@ -46,10 +57,19 @@ export default function Home() {
           </Button>
         </Stack>
       </form>
-      <Stack spacing={1} sx={{mt: 4}}>
+      {/* <Stack spacing={1} sx={{mt: 4}}>
           {recommendations.map((movie, index) => (
             <div key={index}>{movie}</div>
           ))}
+      </Stack> */}
+      <Stack spacing={1} sx={{ mt: 4}}>
+        <Grid container spacing={2} sx={{justifyContent: "center", alignItems: "center" }}>
+          {recommendations.map((movie, index) => (
+            <Grid size={5}>
+              <Item key={index}>{movie}</Item>
+            </Grid>
+          ))}
+        </Grid>
       </Stack>
     </Layout>
   );
